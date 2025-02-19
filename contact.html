@@ -36,6 +36,56 @@
             }
            
         </style>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+            .form-container {
+                max-width: 400px;
+                margin: auto;
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+            .form-container label {
+                display: block;
+                margin-bottom: 8px;
+                font-weight: bold;
+            }
+            .form-container input[type="text"],
+            .form-container input[type="email"],
+            .form-container input[type="password"],
+            .form-container input[type="date"],
+            .form-container select {
+                width: 100%;
+                padding: 8px;
+                margin-bottom: 15px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+            .form-container input[type="submit"] {
+                background-color: #4CAF50;
+                color: white;
+                padding: 10px 15px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+            .form-container input[type="submit"]:hover {
+                background-color: #45a049;
+            }
+            .form-container .gender-options {
+                margin-bottom: 15px;
+            }
+            .form-container .skill-set {
+                margin-bottom: 15px;
+            }
+            .form-container .skill-set label {
+                display: inline-block;
+                margin-right: 10px;
+            }
+        </style>
         
     </head>
     
@@ -53,48 +103,54 @@
                 </body>
         </header>
             <section>
-                <form action = "contact.php" method ="post">                      
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name"><br>
-                        <label for = "email" style = "text-align : left">Email:</label>
-                        <input type = "email" id = "email" name = "email"><br>
-                        <label for ="Phone">Phone:</label>
-                        <input type = "tel" id = "phone" name = "Phone"><br>
-                        <label for = "Date of Birth" >Date of Birth:</label>
-                        <input type = "date" id = "dob" name = "dob"><br>
-                        <label for = "Website">Website:</label>
-                        <input type = "url" id = "website" name = "website"><br>
-                        <label for Favorite color>Favorite Color:</label>
-                        <input type = "color" id = "favcolor" name = "favcolor"><br>
-                        <label for = "Experience">Experience(1-10):</label>
-                        <input type = "range" id = "experience" name = "experience" min = "1" max = "10"><br>
-                        <label for = "Upload Resume" >Upload Resume:</label>
-                        <input type = "file" id = "resume" name = "resume"><br>
-                        <label for = "Message">Message</label>
-                        <textarea id = "message" name = "message" rows = '2' cols = '30'></textarea><br>
-                        <label for = "Gender">Gender:</label>                       
-                        <label for = "Male">Male</label>
-                        <input type ="radio" id = "Male" name = "Male">
-                        <label for = "Female">Female</label>
-                        <input type = "radio" id = "Female" name  = "Female"><br>
-                        <label for = "Hobbies">Hobbies: </label>
-                        <label for=" coding">Coding</label>
-                        <input type = "checkbox"id = "coding" name = "coding">
-                        <label for=" coding">Reading</label>
-                        <input type = "checkbox"id = "Reading" name = "Reading">
-                        <label for=" coding">Gaming</label>
-                        <input type = "checkbox"id = "Gaming" name = "Gaming"><br>
-                        <label for = "Country">Country:</label>
-                        <select id="country" name = "country"><br>
-                            <option value = "USA">USA</option>
-                            <option value = "UK">UK</option>
-                            <option value="canada">Canada</option>
-                            <option value = "Australia">Australia</option>
-                            <option value = "India">India</option>
-                        <label for="submit">Submit</label>
-                        <input type = "submit" id = "submit" name = "submit">
+    
+<body>
 
-                </form>
+<div class="form-container">
+    <h2>Contact Form</h2>
+    <form action="/submit_form" method="post">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+
+        <div class="gender-options">
+            <label>Gender:</label>
+            <label><input type="radio" name="gender" value="male" required> Male</label>
+            <label><input type="radio" name="gender" value="female"> Female</label>
+        </div>
+
+        <div class="skill-set">
+            <label>Skill Set:</label>
+            <label><input type="checkbox" name="skill" value="HTML"> HTML</label>
+            <label><input type="checkbox" name="skill" value="CSS"> CSS</label>
+            <label><input type="checkbox" name="skill" value="JavaScript"> JavaScript</label>
+            <label><input type="checkbox" name="skill" value="Java"> Java</label>
+            <label><input type="checkbox" name="skill" value="Python"> Python</label>
+        </div>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+</body>
+</html>
             </section>
     </body>
 </html>
